@@ -78,7 +78,13 @@ function contains(arr, str, cb){
   //Code Here
 
 function uniq(arr, cb){
-  
+  var newArr=[];
+  for(var i=0; i<arr.length;i++){
+    if(!newArr.includes(arr[i])){
+      newArr.push(arr[i]);
+    }
+  }
+    return cb(newArr);
 }
 
 
@@ -90,9 +96,9 @@ function uniq(arr, cb){
 
 function each(arr, cb){
   for(var i=0; i< arr.length;i++){
-    cb(arr[i])
+    cb(arr[i],i)
   }
-  
+
 }
 
 
@@ -103,9 +109,13 @@ function each(arr, cb){
 
 // Code here
 function getUserById(arr, id, cb){
-  
+  for(var i=0; i< arr.length; i ++){
+    if(arr[i].id === id){
+      cb(arr[i]);
+    }
+  }
 }
-
+obj.prop === "prop"
 
 var users = [
   {
